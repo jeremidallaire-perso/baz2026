@@ -1,0 +1,103 @@
+.sliceImagesSlideShow {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    .sliceTitle{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: start;
+        font-family: $nunitoSans-extraLight;
+        font-size: 30px;
+        line-height: 40px;
+        text-transform: uppercase;
+        padding:20px;
+        display:none;
+    }
+    .slideShowWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        overflow: hidden;
+        .swiper {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            .swiper-pagination {
+                bottom:-30px;
+                .swiper-pagination-bullet-active {
+                    background-color: #000;
+                }
+            }
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            height: 100%;
+            .item {
+                position: relative;
+                height: 100%;
+                .img-wrapper {
+                    background-size: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .swiper-button-prev,.swiper-button-next {
+        color: #000; 
+        font-size:auto;
+    }
+    .swiper-button-prev{
+        left:-30px
+    }
+    .swiper-button-next{
+        right:-30px;
+    }
+}
+
+.sliceImagesSlideShow.mobile {
+    .titleContent {
+        padding: 0 20px;
+        width: 100%;
+    }
+    .slideShowWrapper {
+        width: 100%;
+        margin-left: 0%;
+        .swiper {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            .swiper-pagination {
+                position: absolute;
+                bottom: -30px;
+                .swiper-pagination-bullet-active {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+}

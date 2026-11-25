@@ -1,0 +1,234 @@
+header {
+  display: flex;
+  flex-direction: column;
+  max-width: $desktop-wrapper-maxWidth;
+  margin: auto;
+  // min-height:170px;
+  padding: $desktop-wrapper-padding;
+  position: relative;
+  z-index: 200;
+  .leftside {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .headerLogo {
+      position: absolute;
+      top: 0;
+      display: flex;
+      opacity: 0;
+      animation: 0.5s ease-out forwards HeaderfadeIn;
+      z-index: 200;
+
+      h1 {
+        font-family: $basicSans-bold;
+        font-size: 108px;
+        line-height: 108px;
+        color: #000;
+      }
+      h6 {
+        font-family: $basicSans-bold;
+        font-size: 40px;
+        line-height: 1;
+        color: #000;
+      }
+    }
+  }
+
+  .rightside {
+    display: flex;
+    width: auto;
+    justify-content: flex-end;
+    min-height: 170px;
+    align-items: flex-start;
+    .menuWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: 1s ease-out forwards HeaderfadeIn;
+      .menuItem {
+        padding: 0px;
+        cursor: pointer;
+        padding: 0 10px;
+        h5,
+        p {
+          text-transform: uppercase;
+          border-bottom: 0px solid #000;
+          font-family: $poppins;
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
+
+      .menuItem .mainSectionTitle {
+        font-family: $basicSans-bold;
+        font-size: 1.1em;
+        margin-top: -2px;
+      }
+
+      .menuItem.active {
+        p {
+          margin-top: 2px;
+          border-bottom: 1px solid #000;
+        }
+      }
+
+      .menuItem.section {
+        a {
+          color: #000;
+        }
+        h3 {
+          font-weight: bold;
+        }
+      }
+
+      .menuItem:hover {
+        opacity: 0.5;
+      }
+
+      .language-switcher {
+        color: grey;
+
+        select {
+          display: block;
+          font-size: 16px;
+          font-family: sans-serif;
+          font-weight: 700;
+          color: #444;
+          line-height: 1.3;
+          padding: 0.3em 1em 0.2em 0.6em;
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
+          margin: 0 0 0 10px;
+          border: 1px solid #aaa;
+          box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+          border-radius: 0.4em;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+          background-color: #fff;
+          background-image:
+            url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+            linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+          background-repeat: no-repeat, repeat;
+          background-position:
+            right 0.7em top 50%,
+            0 0;
+          background-size:
+            0.65em auto,
+            100%;
+        }
+        select::-ms-expand {
+          display: none;
+        }
+        select:hover {
+          border-color: #888;
+        }
+        select:focus {
+          border-color: #aaa;
+          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+          box-shadow: 0 0 0 3px -moz-mac-focusring;
+          color: #222;
+          outline: none;
+        }
+        select option {
+          font-weight: normal;
+        }
+      }
+
+      .lang {
+        padding: 0 4px;
+      }
+    }
+
+    .menuWrapper.mobile {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: -220%;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      padding: 40px 0;
+      z-index: 300;
+      transition: top ease-in-out 0.5s;
+      border-bottom: 1px solid #000000;
+      div {
+        padding: 10px 0;
+      }
+    }
+    .menuWrapper.mobile.open {
+      top: 0;
+    }
+    .burgerMenu {
+      z-index: 400;
+    }
+  }
+  .rightside.mobile {
+    min-height: 100px;
+  }
+}
+
+@keyframes HeaderfadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Added in the Next.js port: filters are now links, burger is a real button */
+header .menuWrapper .menuItem a {
+  color: inherit;
+  text-decoration: none;
+}
+header .burgerMenu {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+header .menuWrapper .language-switcher {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  // Same box for every part (EN, separator, FR) so they share one baseline.
+  p,
+  a,
+  .language-separator {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    line-height: 1;
+  }
+  p.active {
+    color: #222;
+    border-bottom: none;
+    position: relative;
+    // Underline drawn on a pseudo-element so it takes no layout space (a real border shifts the line).
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 1px;
+      background: currentColor;
+    }
+  }
+  .language-separator {
+    padding: 0 4px;
+  }
+}
+header .menuWrapper .language-switcher:hover {
+  opacity: 1;
+}

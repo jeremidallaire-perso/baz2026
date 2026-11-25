@@ -1,0 +1,12 @@
+.full-width-image {
+    position: relative;
+    padding:40px 0;
+
+    .main-img {
+        z-index: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}

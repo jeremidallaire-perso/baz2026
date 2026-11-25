@@ -1,0 +1,111 @@
+.pageWrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    overflow: hidden;
+    .pageHeaderWrapper {
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        text-align: center;
+        margin-bottom:80px;
+        h2{
+            font-family: $basicSans-bold;
+            font-size: 60px;
+            line-height: 70px;
+            margin-bottom:0px;
+            text-transform: uppercase;
+        }
+        .projectInfoDesc{
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: $nunitoSans-extraLight;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom:20px;
+        }
+    }
+    
+    .pageInfoWrapper{
+        width: 100%;
+        display: flex;
+        .leftSide{
+            width:30%;
+            .item{
+                margin-bottom:20px;
+            }
+        }
+        .rightSide{
+            width:70%;
+            margin-left:40px;
+            .pageDescription{
+                margin: 0 auto;
+                text-align: left;
+                font-family: $nunitoSans-extraLight;
+                margin-bottom:20px;
+                p{
+                    min-height:20px;
+                }
+                a{
+                    color:#000;
+                    font-family: $nunitoSans-bold;
+                }
+            }
+            .pageSliceZone{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .sliceProjectCreditsList{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    align-content: flex-start;
+                    flex-direction: column;
+                    .creditWrapper{
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        align-content: flex-start;
+                        flex-direction: column;
+                        .creditItems{
+                            columns:inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pageWrapper.mobile{
+    .pageHeaderWrapper{
+        margin-bottom:20px;
+        h2{
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 0px;
+        }
+    }
+    .pageInfoWrapper{
+        flex-direction: column;
+        width:90%;
+        margin-left:5%;
+        .leftSide{
+            width:100%;
+            display:flex;
+        }
+        .rightSide{
+            width:100%;
+            display:flex;
+            margin-left:0px;
+            flex-wrap: wrap;
+            .pageDescription{
+                width:100%;
+            }
+
+        }
+    }
+}

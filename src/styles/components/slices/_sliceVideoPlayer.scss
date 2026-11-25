@@ -1,0 +1,66 @@
+.sliceVideoPlayer {
+    width: 100%; // Reset width
+    height: auto; // Reset height
+    .react-player {
+        padding-top: 56.25%; // Percentage ratio for 16:9
+        position: relative; // Set to relative
+        width: 100%;
+        height: auto;
+    }
+
+    .react-player > div {
+        position: absolute; // Scaling will occur since parent is relative now
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .videoThumbnailsOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width:100%;
+        z-index:100;
+        .img-wrapper {
+            background-size: cover;
+            display: flex;
+            height: 100%;
+        }
+    }
+    .hideVideoThumbnailsOverlay {
+        display: none;
+    }
+    .projectCta {
+        width:100px;
+        height:40px;
+        p{
+            font-size:25px;
+        }
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 200;
+        cursor: pointer;
+    }
+}
+
+.wrapperVideoPlayerSlice {
+    position: relative;
+    .projectCta{
+        display: none;
+    }
+}
+
+.sliceVideoPlayer.mobile{
+    .playButton {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        p {
+            font-size:12px;
+            margin-top:16px;
+        }
+    }
+}

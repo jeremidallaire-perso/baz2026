@@ -1,0 +1,19 @@
+.text-info {
+   .sliceTitle{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: start;
+        font-family: $nunitoSans-extraLight;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        padding-bottom:10px;
+   }
+   .wrapperInfo{
+     display:flex;
+        .left-column{
+            margin-right:20px;
+        }
+   }
+}

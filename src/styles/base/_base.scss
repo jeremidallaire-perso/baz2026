@@ -1,0 +1,132 @@
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+*,
+html {
+    /* -webkit-font-smoothing: antialiased; */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+::selection {
+    background: #fff7c7; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #fff7c7; /* Gecko Browsers */
+}
+
+body {
+    font-family: $font-sans-serif;
+    letter-spacing: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    grid-gap: 2rem;
+    max-width: inherit;
+}
+
+header,
+footer {
+    margin: 0 auto;
+}
+
+main {
+    section {
+        padding-bottom: 8%;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: $min-width-md) {
+
+    main {
+        padding: 0px;
+    }
+}
+
+footer{
+    padding:20px;
+}
+
+/* Medium Devices, Desktops, Large Devices, Wide Screens */
+
+@media only screen and (min-width: $min-width-md) {
+    header,
+    footer,
+    .pageWrapper {
+        padding: 38px 20px;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    main {
+        margin: auto;
+    }
+}
+
+.imageWithCta{
+    animation: all 0.5s ease-in;
+    .projectCta{
+        display: flex;
+        padding: 10px 15px;
+        position:relative;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        margin-top:24px;
+        p{
+            color:#ffffff;
+            text-transform: uppercase;
+            font-family: $poppins; font-weight: 600; 
+            margin-top:4px; 
+        }
+        .bg{
+            text-decoration: none;
+            border: 1px solid #ffffff;
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0);
+            transition: 0.2s;
+            transform: skewX(-15deg);
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+    }
+}
+
+.imageWithCta:hover{
+    .img-wrapper{
+        filter: brightness(50%);
+    }
+    .projectCta{
+        .bg{
+            transform: skewX(0deg);
+        }
+    }
+}
+/* Replaces the wrapper markup gatsby-plugin-image used to generate */
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+button.projectCta {
+    border: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
