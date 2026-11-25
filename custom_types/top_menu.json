@@ -1,0 +1,53 @@
+{
+  "Main": {
+    "display_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "display_title"
+      }
+    },
+    "menu_links": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "label": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "label"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "label": "link",
+              "placeholder": "Select a Link...",
+              "select": null
+            }
+          }
+        },
+        "label": "menu_links"
+      }
+    },
+    "add_ordering_categories": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "add_a_category": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "categories"
+              ],
+              "label": "Add a category",
+              "placeholder": "Choose one category"
+            }
+          }
+        },
+        "label": "Add/Ordering Categories"
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "Main" : {
+    "display_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "display_title"
+      }
+    },
+    "homepage_featured_projects" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "featured_project" : {
+            "type" : "Link",
+            "config" : {
+              "select" : "document",
+              "customtypes" : [ "project" ],
+              "label" : "Featured project",
+              "placeholder" : "Choose a project"
+            }
+          }
+        },
+        "label" : "Homepage Featured Projects"
+      }
+    },
+    "music_featured_projects" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "featured_project" : {
+            "type" : "Link",
+            "config" : {
+              "select" : "document",
+              "customtypes" : [ "project" ],
+              "tags" : [ "Movie" ],
+              "label" : "Featured project",
+              "placeholder" : "Choose a project"
+            }
+          }
+        },
+        "label" : "Music Featured Projects"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "full_width_image" : [ ],
+          "text_info" : [ ]
+        },
+        "choices" : {
+          "full_width_image" : {
+            "type" : "Slice",
+            "fieldset" : "Full width image",
+            "description" : "Full page width featured image",
+            "icon" : "image",
+            "display" : "list",
+            "non-repeat" : {
+              "background_image_position" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "Left", "Right" ],
+                  "default_value" : "Left",
+                  "label" : "background_image_position"
+                }
+              },
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1080,
+                    "height" : 580
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "image"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "text_info" : {
+            "type" : "Slice",
+            "fieldset" : "Text info",
+            "description" : "2 column text section",
+            "icon" : "subject",
+            "display" : "list",
+            "non-repeat" : {
+              "section_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1,heading2",
+                  "label" : "section_title"
+                }
+              },
+              "left_column_text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item",
+                  "allowTargetBlank" : true,
+                  "label" : "left_column_text"
+                }
+              },
+              "right_column_text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item",
+                  "allowTargetBlank" : true,
+                  "label" : "right_column_text"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  }
+}
