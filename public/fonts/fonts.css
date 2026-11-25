@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'BasicSans-bold';
+  font-weight: 400;
+  font-style: normal;
+  src: url('basicSans-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NunitoSans-bold';
+  font-weight: 400;
+  font-style: normal;
+  src: url('NunitoSans_10pt-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NunitoSans-extraLight';
+  font-weight: 400;
+  font-style: normal;
+  src: url('NunitoSans_10pt-ExtraLight.woff') format('woff');
+}
